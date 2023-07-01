@@ -6,7 +6,7 @@ import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
 import SignupFormModal from "../SignupFormModal";
 import "./Navigation.css";
-import { login } from "../../store/session";
+import { login } from "../../store/sellerSession";
 import logoproj from "../../assets/logoproj.jpg";
 
 
@@ -93,7 +93,7 @@ function Navigation({ isLoaded }) {
 
       </div>
       <div className="footer">
- 
+
 
 <div className="kishas-footer">
   <p className="kishas-name">Kisha Onia</p>

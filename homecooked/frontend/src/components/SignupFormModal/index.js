@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
-import * as sessionActions from "../../store/session";
+import * as sessionActions from "../../store/sellerSession";
 import "./SignupForm.css";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
 import SignupFormModalChef from "./indexforseller";
@@ -21,25 +21,25 @@ function SignupFormModal() {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    if (password === confirmPassword) {
-      setErrors([]);
-      return dispatch(
-        sessionActions.signup({
-          username,
-          firstName,
-          lastName,
-          password,
-          DOB,
-          address,
-          profilephoto,
-        })
-      )
-        .then(closeModal)
-        .catch(async (res) => {
-          const data = await res.json();
-          if (data && data.errors) setErrors(data.errors);
-        });
-    }
+    // if (password === confirmPassword) {
+    //   setErrors([]);
+    //   return dispatch(
+    //     sessionActions.signup({
+    //       username,
+    //       firstName,
+    //       lastName,
+    //       password,
+    //       DOB,
+    //       address,
+    //       profilephoto,
+    //     })
+    //   )
+    //     .then(closeModal)
+    //     .catch(async (res) => {
+    //       const data = await res.json();
+    //       if (data && data.errors) setErrors(data.errors);
+    //     });
+    // }
     return setErrors([
       "Confirm Password field must be the same as the Password field",
     ]);
@@ -53,7 +53,7 @@ function SignupFormModal() {
         {errors?.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
-       
+
         <label>
           Username:
           <input
@@ -99,7 +99,7 @@ function SignupFormModal() {
         </label>
         <label>
           Confirm Password:
-        
+
           <input
                     className="text-signup"
 

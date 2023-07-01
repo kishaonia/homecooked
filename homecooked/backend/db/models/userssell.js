@@ -33,8 +33,12 @@ const {
 } = require('sequelize');
 module.exports = (sequelize, DataTypes) => {
   class UsersSell extends Model {
+    toSafeObject() {
+      const { id, username, firstName, lastName, DOB, address, cuisine, specialty, profilephoto} = this; // context will be the User instance
+      return { id, username, firstName, lastName, DOB, address, cuisine, specialty, profilephoto };
+    }
     static associate(models) {
-      UsersSell.hasMany(models.Booking, { 
+      UsersSell.hasMany(models.Booking, {
         foreignKey: 'userssellId'
       });
     }
@@ -44,13 +48,19 @@ module.exports = (sequelize, DataTypes) => {
     password: DataTypes.STRING,
     firstName: DataTypes.STRING,
     lastName: DataTypes.STRING,
-    DOB: DataTypes.INTEGER,
+    DOB: DataTypes.STRING,
     address: DataTypes.STRING,
     profilephoto: DataTypes.STRING,
-    specialty: DataTypes.STRING
+    specialty: DataTypes.STRING,
+    cuisine: DataTypes.STRING
   }, {
     sequelize,
     modelName: 'UsersSell',
+    defaultScope: {
+      attributes: {
+        exclude: ["createdAt", "updatedAt"]
+      }
+    }
   });
   return UsersSell;
 };

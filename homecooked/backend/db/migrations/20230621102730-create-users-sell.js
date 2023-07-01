@@ -27,7 +27,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       DOB: {
-        type: Sequelize.INTEGER
+        type: Sequelize.STRING
       },
       address: {
         type: Sequelize.STRING
@@ -36,6 +36,9 @@ module.exports = {
         type: Sequelize.STRING
       },
       specialty: {
+        type: Sequelize.STRING
+      },
+      cuisine:{
         type: Sequelize.STRING
       },
       createdAt: {

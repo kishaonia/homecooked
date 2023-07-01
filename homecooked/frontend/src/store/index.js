@@ -1,6 +1,6 @@
 import { createStore, combineReducers, applyMiddleware, compose } from "redux";
 import thunk from "redux-thunk";
-import sessionReducer from './session';
+import sessionReducer from './sellerSession';
 import spotsReducer from "./spots";
 import reviewsReducer from "./reviews"
 
@@ -26,4 +26,4 @@ const configureStore = (preloadedState) => {
 };
 
 
-export default configureStore; 
+export default configureStore;

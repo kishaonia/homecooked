@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useModal } from "../../context/Modal";
-import * as sessionActions from "../../store/session";
+import * as sessionActions from "../../store/sellerSession";
 import "./SignupForm.css";
 
 function SignupFormModalChef() {
@@ -15,15 +15,16 @@ function SignupFormModalChef() {
   const [address, setAddress] = useState("");
   const [profilephoto, setProfilePhoto] = useState("");
   const [specialty, setSpecialty] = useState("");
+  const [cuisine, setCuisine] = useState("")
   const [errors, setErrors] = useState([]);
   const { closeModal } = useModal();
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async(e) => {
     e.preventDefault();
     if (password === confirmPassword) {
       setErrors([]);
       return dispatch(
-        sessionActions.signup({
+        sessionActions.sellerSignUp({
           username,
           firstName,
           lastName,
@@ -31,7 +32,8 @@ function SignupFormModalChef() {
           DOB,
           address,
           profilephoto,
-          specialty,
+          cuisine,
+          specialty
         })
       )
         .then(closeModal)
@@ -52,7 +54,7 @@ function SignupFormModalChef() {
         {errors?.map((error, idx) => (
           <li key={idx}>{error}</li>
         ))}
-       
+
         <label>
           Username:
           <input
@@ -98,7 +100,7 @@ function SignupFormModalChef() {
         </label>
         <label>
           Confirm Password:
-        
+
           <input
                     className="text-signup"
 
@@ -127,6 +129,17 @@ function SignupFormModalChef() {
             type="text-signup"
             value={address}
             onChange={(e) => setAddress(e.target.value)}
+            required
+          />
+        </label>
+        <label>
+          Cuisine
+          <input
+            className="text-signup"
+
+            type="text-signup"
+            value={cuisine}
+            onChange={(e) => setCuisine(e.target.value)}
             required
           />
         </label>
@@ -165,4 +178,3 @@ function SignupFormModalChef() {
 }
 
 export default SignupFormModalChef;
- 

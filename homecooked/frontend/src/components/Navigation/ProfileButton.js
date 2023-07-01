@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import * as sessionActions from "../../store/session";
+import * as sessionActions from "../../store/sellerSession";
 import { useHistory } from "react-router-dom";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
@@ -58,23 +58,23 @@ function ProfileButton({ user }) {
         <i className="fa fa-user-circle-o"></i>
       </button>
       <div className="profile-menu">
-        <ul className={ulClassName} ref={ulRef}> 
+        <ul className={ulClassName} ref={ulRef}>
           {user ? (
             <>
               <li>
                 Hello, {user?.firstName}!
               </li>
               <li>{user?.email}</li>
-            
+
               <div className='dividing-line'> </div>
                 <NavLink exact to="/spots/current">
                   Manage Your Spots
                 </NavLink>
-              
-            
+
+
               <li>
               <div className='dividing-line'> </div>
-            
+
                 <button className="button-logout" onClick={logout}>
                   Log Out
                 </button>
