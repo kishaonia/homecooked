@@ -1,0 +1,6 @@
+{
+  "dependencies": {
+    "jquery": "^3.7.0",
+    "react-flip-page": "^1.6.4"
+  }
+}

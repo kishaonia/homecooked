@@ -136,6 +136,7 @@ function LoginFormModal() {
   <div className="slogan-overlay">
     bringing homemade comfort to your doorstep!
   </div>
+  <button className="browse-login">find your homemade favorite food!</button>
   <video
     className="bglogin-video"
     src={bglogin}

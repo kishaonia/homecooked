@@ -12,6 +12,7 @@ import CurrentUserSpots from "./components/Spots/CurrentUsersSpots";
 import CreateSpot from "./components/Spots/CreateSpot";
 import EditSpot from "./components/Spots/EditSpot";
 import LoginFormModal from "./components/LoginFormModal";
+import Story from "./components/Navigation/AboutUs";
 
 function App() {
     const dispatch = useDispatch();
@@ -36,6 +37,9 @@ function App() {
             <Route exact path="/spots/new">
             <Navigation isLoaded={isLoaded} />
               <CreateSpot />
+            </Route>
+            <Route exact path="/aboutus">
+              <Story />
             </Route>
             <Route exact path="/spots/:spotId">
             <Navigation isLoaded={isLoaded} />
