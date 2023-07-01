@@ -91,14 +91,11 @@ display: flex;
 }
 
 
-button {
-  background-color: transparent;
-  border: none;
-  cursor: pointer;
-}
+
 
 button:hover {
   text-decoration: underline;
+  color: white;
 }
 
 

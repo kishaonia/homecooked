@@ -75,3 +75,25 @@ form.login-form {
   #demo-user-button{
     margin-top: 203px;
   }
+  .browse-login{
+    text-align: center; 
+    width: 269px;
+    position: absolute;
+    top: 90%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 15px;
+    /* font-weight: bold; */
+    text-align: center;
+    background: rgba(128, 128, 128, 0.314);
+    border: transparent;
+    border-radius: 74px;
+  }
+
+  .browse-login:hover{
+    color: gray;
+    text-decoration: underline;
+    background-color: brown;
+    border: brown;
+  }
