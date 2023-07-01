@@ -1,0 +1,264 @@
+.all-spots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  padding: 40px;
+  
+}
+.edit-navImage {
+
+}
+
+.navImage {
+  height: 0;
+  padding-bottom: 66.666%;
+  position: relative;
+  overflow: hidden;
+}
+
+.navImage img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.city-rating {
+display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.navSpotDetails div:first-child {
+  margin-bottom: 8px;
+  font-weight: bold;
+}
+
+
+.delete-form {
+  list-style: none;
+}
+.manage-your-spots-div{
+  display: flex;
+}
+.delete-spot-button {
+  list-style: none;
+}
+
+.delete-form-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 150px;
+  padding-top: 30px;
+  width: 450px;
+  padding-bottom: 30px;
+}
+
+.title {
+  font-size: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+.errors {
+  color: red;
+  margin-bottom: 1rem;
+}
+
+.delete-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px;
+  
+}
+
+.submit-button-delete {
+  background-color: rgb(164, 113, 230);
+  color: white;
+  border: none;
+  border-radius: 3px;
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+  cursor: pointer;
+}
+
+.submit-button-delete:hover {
+  background-color: rgb(199, 9, 145);
+ 
+}
+
+
+button {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+}
+
+button:hover {
+  text-decoration: underline;
+}
+
+
+
+.delete-review-form {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+margin-top: 15px;
+margin-bottom: 20px;
+text-decoration: none;
+}
+
+.spot-button-delete {
+background-color: rgb(239, 51, 51);
+color: white;
+border: none;
+border-radius: 4px;
+cursor: pointer;
+margin-right: 10px;
+text-decoration: none;
+
+}
+
+button#deleteSpot-button{
+height: 50px;
+width: 600px;
+text-decoration: none;
+}
+.spot-button-delete:hover {
+background-color: rgb(219, 97, 97);
+}
+.spot-button-delete-no{
+background-color: rgb(239, 51, 51);
+color: white;
+border: none;
+border-radius: 4px;
+font-size: 20px;
+cursor: pointer;
+margin-right: 10px;
+text-decoration: none;
+
+}
+button#spot-button-delete-no{
+height: 50px;
+width: 600px;
+text-decoration: none;
+background-color: #484848;
+color: #ebebeb;
+}
+button[type="submit"] {
+margin-top: 20px;
+
+border: none;
+border-radius: 4px;
+font-size: 16px;
+cursor: pointer;
+text-decoration: none;
+}
+
+
+
+.delete-review-button {
+margin: 20px;
+font-weight: bold;
+font-size: 25px;
+text-decoration: none;
+}
+
+.manage-your-spots-create {
+display: flex;
+  align-items: flex-start;
+  flex-direction: column;
+  align-content: stretch;
+  justify-content: space-around;
+  margin-left: 75px;
+  
+  margin-top: 30px;
+}
+
+.createspot-manage {
+font-size: 25px;
+font-weight: bold;
+margin-right: 10px;
+color: #333;
+}
+
+.create-spot-link-bottom {
+display: inline-block;
+background-color: #d2c9cf;
+color: #fff;
+text-decoration: none;
+padding: 8px 12px;
+border-radius: 5px;
+font-size: 1rem;
+font-weight: bold;
+transition: all 0.3s ease;
+}
+
+.create-spot-link-bottom:hover {
+background-color: #9c989d;
+box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.2);
+}
+
+.create-spot-link-bottom {
+display: block;
+margin-top: 10px;
+}
+
+
+.spot-delete-form-div{
+height: 160px;
+width: 600px;
+margin: 30px;
+font-size: 30px;
+font-weight: bold;
+}
+
+button#no-cancel-button{
+position:absolute;  
+justify-content: center;
+align-items: center;
+text-decoration: none;
+left: 41%;
+margin-top: 20px;
+background-color: rgb(101, 96, 96);
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font-size: 15px;
+  cursor: pointer;
+  margin-right: 10px;
+  text-decoration: none;
+}
+
+.review-delete-button{
+background-color: rgb(101, 96, 96);
+color: white;
+border: none; 
+border-radius: 4px;
+font-size: 20px;
+cursor: pointer;
+margin-right: 10px;
+text-decoration: none;
+}
+
+.spotValues{
+display: flex;
+align-items: flex-start;
+flex-wrap: wrap;
+justify-content: flex-start;
+padding: 50px
+}
+
+
+.no-spots-text{
+  display: flex;
+    height: 54vh;
+    width: 169vh;
+    justify-content: center;
+    align-items: center;
+}

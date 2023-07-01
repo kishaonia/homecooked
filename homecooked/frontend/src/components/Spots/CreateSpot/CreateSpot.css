@@ -1,0 +1,62 @@
+input[type = text], select {
+display: inline-block; 
+box-sizing:border-box;
+width: 50%;
+border-radius: 4px;
+border: 1px solid #ccc;
+margin: 8px 0;
+padding: 12px 20px;
+text-align: center;
+font-style: italic;
+margin-bottom: 20px;
+
+}
+.error {
+    color: red;
+}
+
+.button-create-spot{
+    width: 150px;
+    
+}
+
+div.createanewspot { 
+    font-size: 30px;
+    text-align: center;
+
+    padding-bottom: 5px;
+}
+div.whereisyourplacelocated{
+    
+    font-style:normal;
+    text-align: center;
+}
+
+textarea.description-text-box{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 456px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 8px 0;
+    padding: 12px 20px;
+    text-align: center;
+    font-style: italic;
+    height: 150px;
+    height: 137px;
+    margin-bottom: 20px;
+}
+
+textarea{
+    resize: none;
+}
+.create-spot-label{
+    font-size: 15px;
+    font-weight:bolder;
+    margin-bottom: 10px;
+}
+
+div.description-caption{
+    font-size: 15px;
+    text-align: center;
+}

@@ -1,0 +1,77 @@
+form.login-form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 168px;
+
+  }
+  
+  h1.login-h1 {
+    text-align: center;
+  }
+  
+  button.button-submit {
+    width: 100px;
+    height: 30px;
+  }
+  
+  .login-form li {
+    list-style-type: none;
+    color: red;
+  }
+  
+  button.button-submit-login {
+    color: black;
+    height: 100px;
+    width: 300px;
+    background-color: transparent;
+  }
+  
+  .slogan-overlay {
+    position: absolute;
+    top: 80%;
+    left: 35%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+    text-align: left;
+
+  }
+  
+  .bglogin-video {
+    width: 85vw;
+    height: 100vh;
+    object-fit: cover;
+  }
+  
+  .overlay-login {
+    position: absolute;
+    top: 50%;
+    left: 90%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    color: black;
+    text-align: center;
+    height: 100vh;
+    background-color: white;
+  }
+  
+  .login-h1 {
+    margin: 20px;
+  }
+  
+  .input-for-login {
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+    text-align: center;
+  }
+  
+  .whole-login{
+    margin: -20px;
+  }
+
+  #demo-user-button{
+    margin-top: 203px;
+  }

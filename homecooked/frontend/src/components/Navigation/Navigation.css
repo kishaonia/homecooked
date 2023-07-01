@@ -1,0 +1,129 @@
+* {
+  font-family: 'Manrope', sans-serif;
+  margin: 3px;
+  text-decoration: none;
+   
+}
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /* top: 0; */
+  /* width: 100vw; */
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(201, 199, 199, 0.1);
+  z-index: 1000;
+  /* border-radius: 20px; */
+  /* border: 2px solid #e9e4e4; */
+  border-bottom: 1px solid;
+  margin: -10px;
+
+}
+/* 
+.logo-home{
+
+} */
+
+.left-nav-bar {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+}
+
+.left-nav-bar img {
+  height: 100px;
+  width: 300px;
+}
+
+.right-nav-bar {
+  display: flex;
+  align-items: center;
+  margin-right: 1rem;
+}
+
+.create-spot-link {
+  font-weight: bold;
+  color: #000000;
+  text-decoration: none;
+  font-size: 20px;
+  margin-right: 1rem;
+}
+
+.create-spot-link:hover {
+  text-decoration: dotted;
+  color: rgb(90, 126, 126);
+}
+
+.profile-button {
+  margin-right: 1rem;
+}
+
+
+.kishas-footer{
+  position: sticky;
+  display: flex;
+  font-size: 15px;
+  flex-direction: row;
+  justify-content: space-around;
+  text-orientation: sideways;
+}
+.footer{
+  position: fixed;
+  bottom: 0;
+  width: 100vw;
+  margin: -15px;
+  border: solid 1px #b9b2b2;
+  background-color: #fff;
+  text-align: center;
+  z-index: 1;
+  height: 45px;
+}
+
+.kishas-footer{
+  text-align:right;
+}
+
+.links-right{
+display: flex;
+}
+.homepage-date-check-in,
+.homepage-date-check-out,
+.guest-check-in
+{
+  border: transparent;
+  text-align: center;
+  width: 150px;
+  height: 50px;
+  font-weight: 900;
+    font-size: 15px;
+    border-radius: 150px;
+    color: transparent;
+  cursor: pointer;
+}
+/* .homepage-date-check-in,
+.homepage-date-check-out,
+.guest-check-in :hover,
+{
+
+} */
+.homepage-input{
+  border: 1px solid gray;
+  border-radius: 150px;
+  text-align: center;
+  white-space: nowrap;
+}
+ 
+.homepage-input-popup{
+  visibility: hidden;
+}
+
+.homepage-input-popup:hover{
+  visibility: visible;
+} 
+
+.github,
+.portfolio,
+.email {
+  color: black;
+}
