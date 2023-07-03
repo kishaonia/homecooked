@@ -57,7 +57,6 @@
   .story-wrapper {
     height: 80vh;
     width: 80vw;
-    border: 2px solid black;
     display: flex;
     overflow-x: auto;
     scroll-snap-type: x mandatory;

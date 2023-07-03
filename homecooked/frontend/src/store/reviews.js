@@ -32,7 +32,7 @@ export const deleteOneReviewThunk = (reviewId) => async dispatch => {
         method: 'DELETE',
     });
     if (response.ok) {
-        const deleteReview = await response.json();
+        const reviewId = await response.json();
         dispatch(deleteOneReviewAction(reviewId))
     }
 }

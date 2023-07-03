@@ -1,6 +1,6 @@
 const jwt = require('jsonwebtoken');
 const { jwtConfig } = require('../config');
-const { UsersSell, usersBuys } = require('../db/models');
+const { UsersSell, UsersBuy } = require('../db/models');
 
 const { secret, expiresIn } = jwtConfig;
 
@@ -31,7 +31,7 @@ const setTokenCookie = (res, user) => {
     return token;
 };
 
-const restoreUser = (req, res, next) => {
+const restoreUserSell = (req, res, next) => {
     // token parsed from cookies
     const { token } = req.cookies;
     req.user = null;
@@ -42,7 +42,40 @@ const restoreUser = (req, res, next) => {
 
         try {
             const { id } = jwtPayload.data;
+
             req.user = await UsersSell.findByPk(id, {
+                attributes: {
+                    include: ['username', 'createdAt', 'updatedAt']
+                }
+            });
+           
+        } catch (e) {
+            res.clearCookie('token');
+            return next();
+        }
+
+        if (!req.user) res.clearCookie('token');
+
+        return next();
+    });
+
+    
+};
+
+const restoreUserBuy = (req, res, next) => {
+    // token parsed from cookies
+    const { token } = req.cookies;
+    req.user = null;
+    return jwt.verify(token, secret, null, async (err, jwtPayload) => {
+        if (err) {
+            return next();
+        }
+
+        try {
+            const { id } = jwtPayload.data;
+
+
+            req.user = await UsersBuy.findByPk(id, {
                 attributes: {
                     include: ['username', 'createdAt', 'updatedAt']
                 }
@@ -57,7 +90,10 @@ const restoreUser = (req, res, next) => {
         return next();
     });
 
+    
 };
+
+
 const requireAuth = function (req, _res, next) {
     if (req.user) return next();
 
@@ -68,4 +104,8 @@ const requireAuth = function (req, _res, next) {
     return next(err);
 }
 
-module.exports = { setTokenCookie, restoreUser, requireAuth };
+
+
+
+
+module.exports = { setTokenCookie, restoreUserSell,restoreUserBuy, requireAuth };

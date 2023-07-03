@@ -5,21 +5,21 @@ const { check } = require("express-validator");
 const { sequelize, Op } = require("sequelize");
 const { handleValidationErrors } = require("../../utils/validation");
 const { setTokenCookie, requireAuth } = require("../../utils/auth");
-const { UsersBuys, UsersSells, Bookings, Ratings } = require("../../db/models");
+const { UsersBuy, UsersSell, Booking, Ratings } = require("../../db/models");
 
 
 
 
 router.get('/', requireAuth, async (req, res, next) => {
 
-    let cuisine = await Bookings.findAll({
+    let cuisine = await Booking.findAll({
       include: [
         {
-          model: UsersBuys,
+          model: UsersBuy,
           attributes: ['id', 'lastName', 'firstName'],
         },
         {
-            model: UsersSells,
+            model: UsersSell,
             attributes: ['id', 'lastName', 'firstName'],
           }
       ],
@@ -35,7 +35,7 @@ router.get('/', requireAuth, async (req, res, next) => {
     let Bookings = [];
   
     cuisine?.forEach(booking => {
-      Bookings.push(booking.toJSON());
+      Booking.push(booking.toJSON());
     });
   
     res.json({ Bookings });
@@ -43,7 +43,7 @@ router.get('/', requireAuth, async (req, res, next) => {
   
   router.put('/:id', requireAuth, async (req, res, next) => {
     const { cuisine, dateBooking, timeDone, budget, carrier } = req.body;
-    let booking = await booking.findOne({
+    let booking = await Booking.findOne({
       where: {
         id: req.params.id,
       },
@@ -75,27 +75,27 @@ router.get('/', requireAuth, async (req, res, next) => {
   });
   
   router.delete("/:id", requireAuth, async (req, res, next) => {
-    let booking = await booking.findOne({
+    let deleteBooking = await Booking.findOne({
       where: {
         id: req.params.id,
       },
     });
   
-    if (!booking) {
+    if (!deleteBooking) {
       return res.json({
         message: "Booking couldn't be found",
         statusCode: 404,
       });
     }
   
-    if (booking.usersbuysId !== req.user.id) {
+    if (deleteBooking.usersbuysId !== req.user.id) {
       return res.json({
         message: "Forbidden/not allowed",
         statusCode: 403,
       });
     }
   
-    await booking.destroy();
+    await deleteBooking.destroy();
   
     res.json({
       message: "Successfully deleted",

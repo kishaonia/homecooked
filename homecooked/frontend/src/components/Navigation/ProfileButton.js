@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import { useDispatch } from "react-redux";
-import * as sessionActions from "../../store/sellerSession";
+import * as sessionBuyerActions from "../../store/buyerSession";
 import { useHistory } from "react-router-dom";
 import OpenModalMenuItem from "./OpenModalMenuItem";
 import LoginFormModal from "../LoginFormModal";
@@ -36,16 +36,16 @@ function ProfileButton({ user }) {
 
   const logout = (e) => {
     e.preventDefault();
-    dispatch(sessionActions.logout());
+    dispatch(sessionBuyerActions.logout());
     closeMenu();
     history.push("/");
   };
 
-  const demoSignIn = (e) => {
+  const demoSignInBuyer = (e) => {
     e.preventDefault();
-    const password = "password5"
-    const credential = "demouser@gmail.com"
-    dispatch(sessionActions?.login({ credential, password }));
+    const password = "password"
+    const credential = "janedoe"
+    dispatch(sessionBuyerActions?.login({ credential, password }));
     closeMenu();
   }
 
@@ -58,7 +58,7 @@ function ProfileButton({ user }) {
         <i className="fa fa-user-circle-o"></i>
       </button>
       <div className="profile-menu">
-        <ul className={ulClassName} ref={ulRef}>
+        {/* <ul className={ulClassName} ref={ulRef}>
           {user ? (
             <>
               <li>
@@ -93,13 +93,13 @@ function ProfileButton({ user }) {
                 modalComponent={<SignupFormModal />}
               />
               {!user && (
-                <button onClick={demoSignIn} type="submit" id='demo-user-button'>
+                <button onClick={demoSignInBuyer} type="submit" id='demo-user-button'>
                   Log in as Demo User
                 </button>
               )}
             </>
           )}
-        </ul>
+        </ul> */}
       </div>
     </>
   );

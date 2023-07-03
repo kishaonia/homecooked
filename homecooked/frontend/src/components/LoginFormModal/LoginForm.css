@@ -1,8 +1,12 @@
 form.login-form {
-    display: flex;
-    flex-direction: column;
-    margin-top: 168px;
-
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 70vh;
+  FONT-SIZE: 15px;
+  /* margin-left: 60px; */
+  text-align: center;
   }
   
   h1.login-h1 {
@@ -10,21 +14,25 @@ form.login-form {
   }
   
   button.button-submit {
-    width: 100px;
-    height: 30px;
+    border: 1px solid black;
+    border-radius: 5px;
+    background-color: transparent;
+    margin: 21px;
   }
   
   .login-form li {
     list-style-type: none;
-    color: red;
+    color: black;
+    font-size: 12px;
   }
   
   button.button-submit-login {
     color: black;
-    height: 100px;
-    width: 300px;
     background-color: transparent;
-  }
+    border: black 1px solid;
+    margin-bottom: 100px;
+    border-radius: 4px;  }
+  
   
   .slogan-overlay {
     position: absolute;
@@ -54,10 +62,13 @@ form.login-form {
     text-align: center;
     height: 100vh;
     background-color: white;
+    width: 20vw;
+    text-align: center;
   }
   
   .login-h1 {
-    margin: 20px;
+    margin-bottom: 50px;
+    margin-top: 31px;
   }
   
   .input-for-login {
@@ -66,15 +77,15 @@ form.login-form {
     border-bottom: 1px solid black;
     outline: none;
     text-align: center;
+    margin-top: 26px;
+    margin-bottom: 20px;
   }
   
   .whole-login{
     margin: -20px;
   }
 
-  #demo-user-button{
-    margin-top: 203px;
-  }
+
   .browse-login{
     text-align: center; 
     width: 269px;
@@ -96,4 +107,24 @@ form.login-form {
     text-decoration: underline;
     background-color: brown;
     border: brown;
+  }
+
+  .demo-user-button{
+    background-color: transparent;
+  }
+
+  .login-seller{
+    text-align: center;
+    font-size: 30px;
+    margin: 20px;
+  }
+
+  .Seller-Button-Home{
+    padding-top: 10px;
+  }
+
+  .newhere{
+    text-decoration: underline;
+    margin-top: 19px;
+    color: rgba(0, 0, 0, 0.7);
   }

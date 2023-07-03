@@ -1,26 +1,26 @@
 import { csrfFetch } from './csrf';
 
 
-const SET_USER_SELL = 'session/setUserSell';
-const REMOVE_USER_SELL = 'session/removeUserSell';
+const SET_USER_BUY = 'session/setUserBuy';
+const REMOVE_USER_BUY = 'session/removeUserBuy';
 
-const setUser = (userSell) => {
+const setUser = (userBuy) => {
   return {
-    type: SET_USER_SELL,
-    payload: userSell,
+    type: SET_USER_BUY,
+    payload: userBuy,
   };
 };
 
 const removeUser = () => {
   return {
-    type: REMOVE_USER_SELL,
+    type: REMOVE_USER_BUY,
   }
 };
 
 
 export const login = (user) => async (dispatch) => {
   const { credential, password } = user;
-  const response = await csrfFetch('/api/session/seller', {
+  const response = await csrfFetch('/api/session/', {
     method: 'POST',
     body: JSON.stringify({
       credential,
@@ -32,14 +32,14 @@ export const login = (user) => async (dispatch) => {
   return response;
 };
 
-export const restoreUserSell = () => async dispatch => {
+export const restoreUserBuy = () => async dispatch => {
   const response = await csrfFetch('/api/session');
   const data = await response.json();
   dispatch(setUser(data.user));
   return response;
 };
 
-export const sellerSignUp = (user) => async (dispatch) => {
+export const buyerSignUp = (user) => async (dispatch) => {
   const { username,
     firstName,
     lastName,
@@ -47,8 +47,8 @@ export const sellerSignUp = (user) => async (dispatch) => {
     DOB,
     address,
     profilephoto,
-    specialty } = user;
-  const response = await csrfFetch("/api/usersSells", {
+     } = user;
+  const response = await csrfFetch("/api/usersBuys", {
     method: "POST",
     body: JSON.stringify({
       username,
@@ -58,7 +58,7 @@ export const sellerSignUp = (user) => async (dispatch) => {
       DOB,
       address,
       profilephoto,
-      specialty
+      
     }),
   });
   const data = await response.json();
@@ -79,11 +79,11 @@ const initialState = { user: null };
 const sessionReducer = (state = initialState, action) => {
   let newState;
   switch (action.type) {
-    case SET_USER_SELL:
+    case SET_USER_BUY:
       newState = Object.assign({}, state);
       newState.user = action.payload;
       return newState;
-    case REMOVE_USER_SELL:
+    case REMOVE_USER_BUY:
       newState = Object.assign({}, state);
       newState.user = null;
       return newState;

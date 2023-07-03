@@ -70,7 +70,7 @@
 
 
 import React, { useState, useRef } from "react";
-import * as sessionActions from "../../store/sellerSession";
+import * as sessionBuyerActions from "../../store/buyerSession";
 import { useDispatch, useSelector } from "react-redux";
 import { useModal } from "../../context/Modal";
 import Navigation from "../Navigation";
@@ -79,6 +79,8 @@ import "./LoginForm.css";
 import SignupFormModal from "../SignupFormModal";
 import OpenModalMenuItem from "../Navigation/OpenModalMenuItem";
 import bglogin from "../../assets/bglogin.mp4";
+import * as sessionSellerActions from "../../store/sellerSession";
+import LoginFormSeller from "./indexSeller";
 
 function LoginFormModal() {
   const currentUser = useSelector((state) => state?.session?.user);
@@ -94,28 +96,31 @@ function LoginFormModal() {
     e.preventDefault();
     setErrors([]);
     try {
-      await dispatch(sessionActions.login({ credential, password }));
+      await dispatch(sessionBuyerActions.login({ credential, password }));
       closeModal();
-      history.push("/");
+      history.push("/Feed");
     } catch (res) {
       if (res.status === 401) {
         setErrors(["User not found. Please check your credentials."]);
-      } else {
-        const data = await res?.json();
-        if (data && data.errors) setErrors(data.errors);
-      }
+      } 
+      // else 
+      // {
+      //   const data = await res?.json();
+      //   if (data && data.errors) setErrors(data.errors);
+      // }
     }
+  
   };
 
-  const demoSignIn = async (e) => {
+  const demoSignInBuyer = async (e) => {
     e.preventDefault();
     const password = "password";
     const credential = "janedoe";
 
     try {
-      await dispatch(sessionActions.login({ credential, password }));
+      await dispatch(sessionBuyerActions.login({ credential, password }));
       closeModal();
-      history.push("/");
+      history.push("/Feed");
     } catch (error) {
       console.log(error);
     }
@@ -125,6 +130,10 @@ function LoginFormModal() {
     history.push("/");
   }
 
+
+ 
+
+  
   const handleVideoEnded = () => {
     videoRef.current.play();
   };
@@ -159,7 +168,7 @@ function LoginFormModal() {
       </ul>
     )}
     <label>
-      Username or Email:
+     username
       <br />
       <input
         className="input-for-login"
@@ -170,7 +179,7 @@ function LoginFormModal() {
       />
     </label>
     <label>
-      Password:
+     password
       <br />
       <input
         className="input-for-login"
@@ -185,17 +194,28 @@ function LoginFormModal() {
       type="submit"
       disabled={credential.length < 4 || password.length < 6}
     >
-      Log In
+      log in
     </button>
-    <button onClick={demoSignIn} type="submit" id="demo-user-button">
-      Demo User
-    </button>
-
     <OpenModalMenuItem
+      className="Seller-Button-Home"
+      itemText="If you're a seller press here!"
+      modalComponent={<LoginFormSeller />}
+    />
+
+    <div className="newhere">
+    <OpenModalMenuItem
+    id="newhere"
       className="signup-button-home"
-      itemText="Sign Up"
+      itemText="New here?"
       modalComponent={<SignupFormModal />}
     />
+    </div>
+   
+   
+  
+
+<button onClick={demoSignInBuyer} type="submit" id="demo-user-button">
+login as demo user    </button>
   </form>
 </div>
 

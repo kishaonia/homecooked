@@ -1,22 +1,23 @@
+
 h1.signup-h1 {
     display: flex;
     justify-content: center;
-
+    padding-top: 29px;
 }
 form.signup-form{
-    display: flex;
-    width: 40vw;
+  display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: space-evenly;
-    height: 70vh;
-    FONT-SIZE: 15px;
-    /* margin-left: 60px; */
+    justify-content: center;
+    height: 10px;
+    font-size: 15px;
+    padding-top: 500px;
     text-align: center;
+    overflow-x: scroll;
 }
 
 .signup-form li {
-    color: red;
+
     list-style-type: none;
 }
 
@@ -26,4 +27,122 @@ form.signup-form{
     border-bottom: 1px solid black;
     outline: none;
     text-align: center;
+    display: flex;
+    width: 402px;
 }
+
+
+
+.signup-seller{
+    /* display: flex;
+    flex-direction: column;
+    align-content: center;
+    align-items: center;
+    width: 53vw; */
+}
+
+    .signup-seller-photo{
+        display: flex;
+    
+        width: 146px;
+    }
+
+    .profile-photo{
+        display: flex;
+    }
+
+    .signup-user{
+        display: flex;
+        flex-direction: column;
+        align-content: center;
+        align-items: center;
+        height: 93vh;
+        width: 53vw;
+    }
+
+    .profile-photo{
+        /* height: 150px;
+        width: 150px;
+        border-radius: 50%;
+        object-fit: cover; */
+
+    }
+
+
+    .rendered-lists{
+        height: 30vh;
+        width: 50vw;
+        overflow-x: hidden;
+    }
+
+
+ .dropdown-cuisine{
+        position: relative;
+        display: inline-block;
+      }
+      
+.dropdown-cuisine .cuisine1 {
+        display: block;
+      }
+      
+      .dropdown-menu {
+        display: none;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+        background-color: #fff;
+        border: 1px solid #ccc;
+        z-index: 1;
+      }
+      
+.dropdown-cuisine:hover .dropdown-menu {
+        display: block;
+      }
+      
+      .dropdown-menu li {
+        padding: 8px;
+        cursor: pointer;
+      }
+      
+      .dropdown-menu li:hover {
+        background-color: #f2f2f2;
+      }
+      
+
+      .hide-place{
+        display: block; 
+        max-height: 133px;
+        /* max-width: 307px; */
+        /* height: 138px; */
+        overflow-x: hidden;
+        overflow-x: hidden;
+        margin-top: -24px;
+        background-color: #e6d7d778;
+        white-space: pre-wrap;
+        object-fit: cover;
+      }
+
+      .dropdown-countries{
+        max-height: 194px; 
+        display: flex;
+        border-block: white;
+        color: black;
+        overflow-x: inherit;
+        text-align: start;
+        /* width: 36vw; */
+        /* width: 100%; */
+        justify-content: space-around;
+        align-content: space-between;
+        align-items: flex-start;
+          }
+
+          .uploaded-img{
+            max-height: 100px;
+            max-width: 100px;
+            border-radius: 50%;
+          }
+
+         

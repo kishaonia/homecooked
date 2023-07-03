@@ -1,4 +1,4 @@
-input[type = text], select {
+/* input[type = text], select {
 display: inline-block; 
 box-sizing:border-box;
 width: 50%;
@@ -10,7 +10,7 @@ text-align: center;
 font-style: italic;
 margin-bottom: 20px;
 
-}
+} */
 .error {
     color: red;
 }

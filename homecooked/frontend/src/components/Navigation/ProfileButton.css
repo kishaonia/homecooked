@@ -16,17 +16,7 @@
     display: inline-block;
   }
   
-  .drop-down-menu i.fa-bars {
-    position: absolute;
-    right: 40px;
-    bottom: 8px;
-  }
-  
-  .drop-down-menu i.fa-user-circle-o {
-    position: absolute; 
-    right: 15px;
-    bottom: 8px
-  }
+
   
   .profile-dropdown {
     position: fixed;
@@ -83,9 +73,9 @@
     text-decoration: none;
   }
   
- .button-logout{
+ /* .button-logout{
 width: 50px;
 border-radius: 5px;
 margin: 10px;
 text-decoration: none;
- }
+ } */
